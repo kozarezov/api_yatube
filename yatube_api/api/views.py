@@ -1,9 +1,9 @@
+from posts.models import Comment, Group, Post
 from rest_framework import viewsets
 from rest_framework.generics import get_object_or_404
 from rest_framework.views import PermissionDenied
 
-from posts.models import Post, Comment, Group
-from .serializer import PostSerializer, CommentSerializer, GroupSerializer
+from .serializer import CommentSerializer, GroupSerializer, PostSerializer
 
 
 class PostViewSet(viewsets.ModelViewSet):

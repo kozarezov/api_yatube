@@ -1,9 +1,8 @@
+from django.urls import include, path
 from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
-from django.urls import path, include
 
-from .views import PostViewSet, GroupViewSet, CommentViewSet 
-
+from .views import CommentViewSet, GroupViewSet, PostViewSet
 
 router = DefaultRouter()
 router.register('posts', PostViewSet, basename='posts')
@@ -17,4 +16,4 @@ router.register(
 urlpatterns = [
     path('api-token-auth/', views.obtain_auth_token),
     path('', include(router.urls)),
-] 
+]
